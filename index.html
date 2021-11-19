@@ -1,0 +1,169 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container2" id="kalkulator">
+            <h2>Kalkulator</h2>
+            <input type="text" name="text" id="input">
+            <div class="allbutton">
+                <div class="tombol1">
+                    <button type="button" id="sin">sin</button>
+                    <button type="button" id="cos">cos</button>
+                    <button type="button" id="tan">tan</button>
+                    <button type="button" id="clr">C</button>
+                </div>
+    
+                <div class="tombol2">
+                    <button type="button" id="pangkat2">x<sup>2</sup></button>
+                    <button type="button" id="pangkat3">x<sup>3</sup></button>
+                    <button type="button" id="akar2">&#8730</button>
+                    <button type="button" id="akar3">&#8731</button>
+                </div>
+    
+                <div class="tombol3">
+                    <button type="button" id="1" onclick="insert(1)">1</button>
+                    <button type="button" id="2" onclick="insert(2)">2</button>
+                    <button type="button" id="3" onclick="insert(3)">3</button>
+                    <button type="button" id="tambah" onclick="insert('+')">+</button>
+                </div>
+    
+                <div class="tombol4">
+                    <button type="button" id="4" onclick="insert(4)">4</button>
+                    <button type="button" id="5" onclick="insert(5)">5</button>
+                    <button type="button" id="6" onclick="insert(6)">6</button>
+                    <button type="button" id="kurang" onclick="insert('-')">-</button>
+                </div>
+    
+                <div class="tombol5">
+                    <button type="button" id="7" onclick="insert(7)">7</button>
+                    <button type="button" id="8" onclick="insert(8)">8</button>
+                    <button type="button" id="9" onclick="insert(9)">9</button>
+                    <button type="button" id="kali" onclick="insert('*')">x</button>
+                </div>
+    
+                <div class="tombol6">
+                    <button type="button" id="0" onclick="insert(0)">0</button>
+                    <button type="button" id="samadengan" onclick="result()">=</button>
+                    <button type="button" id="titik" onclick="insert('.')">.</button>
+                    <button type="button" id="bagi" onclick="insert('/')">:</button>
+                </div>
+
+            </div>
+            
+            <div></div>
+        </div>
+    </div>
+    <div class="container" id="determinan">
+        <h2>Kalkulator Determinan Matriks 3 x 3</h2>
+        <h3>Masukkan angka dibawah ini</h3>
+        <div class="matrix">
+            <div class="baris1">
+                <input type="text" name="11" id="11">
+                <input type="text" name="12" id="12">
+                <input type="text" name="13" id="13">
+            </div>
+
+            <div class="baris2">
+                <input type="text" name="21" id="21">
+                <input type="text" name="22" id="22">
+                <input type="text" name="23" id="23">
+            </div>
+
+            <div class="baris3">
+                <input type="text" name="31" id="31">
+                <input type="text" name="32" id="32">
+                <input type="text" name="33" id="33">
+            </div> 
+        </div>
+
+        <!-- <div class="containeropsi">
+            <label class="ukuran">untuk matriks :</label>
+            <select name="opsi" id="opsiukuran">
+                <option value="3x3">3 x 3</option>
+                <option value="4x4">4 x 4</option>
+            </select>
+        </div> -->
+
+        <div class="button">
+            <button type="button" id="tes">Hitung</button>
+
+        </div>
+        
+        <div class="result">
+            <p>Nilai Determinannya adalah</p>
+            <label id="hasil">...</label>
+
+        </div>
+        
+    </div>
+    <div class="container3">
+        <h2>Grafik Persamaan</h2>
+        <input type="text" name="text" id="inputpers"> <button type="button" id="gambar">Gambar!</button>
+        <div id="myPlot" style="width:100%;max-width: 90%;"></div>
+    </div>
+
+    <div class="container4">
+        <h2>Kongruensi Linear</h2>
+        <input type="text" name="text" id="inputkoe"> 
+        <h3 id="kongruensi">x = </h3> 
+        <input type="text" name="text" id="inputsisa"> 
+        <h3 id="kongruensi">mod</h3>
+        <input type="text" name="text" id="inputmod">
+        <button type="button" id="carix">Cari x</button>
+        <p>Nilai x adalah</p>
+        <label id="hasilkong">...</label>
+    </div>
+
+    
+
+    
+
+    
+    
+    <!-- <button type="button" id="button"> Pindah Kalkulator </button> -->
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        document.getElementById("gambar").onclick = function (){
+            var simpan = document.getElementById("inputpers").value
+            var xValues = [];
+            var yValues = [];
+        
+        // Generate values
+            for (var x = 0; x <= 10; x += 1) {
+            xValues.push(x);
+            yValues.push(eval(simpan));
+            }
+        
+        // Define Data
+            var data = [{
+            x: xValues,
+            y: yValues,
+            mode: "lines"
+            }];
+        
+        // Define Layout
+            var layout = {title: "y = " + simpan};
+        
+        // Display using Plotly
+            Plotly.newPlot("myPlot", data, layout);
+            
+        }
+        
+    </script>
+    
+    
+    
+</body>
+</html>

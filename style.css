@@ -1,0 +1,177 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    background-color: #222;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url("https://source.unsplash.com/1600x900/?landscape");
+    background-repeat: no-repeat;
+    background-position: center;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.container {
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #eaeaead0;
+    margin: auto;
+    margin-top: 20px;
+    animation: load 300ms ease-out;
+    max-width: 450px;
+    min-width: 450px;
+
+}
+@keyframes load {
+    0% {
+        transform: translateY(-100%);
+        
+    }
+    100% {
+        transform: translateY(0%);
+        
+    }
+}
+h3 {
+    margin: 5px;
+}
+h2 {
+    margin: 5px;
+}
+button {
+    margin: 5px;
+    padding: 5px;
+    border: none;
+    font-family: inherit;
+    transition: 0.5s;
+    width: 70px;
+}
+#samadengan {
+    background-color: rgb(158, 155, 155)
+}
+
+#clr {
+    background-color: rgb(158, 155, 155)
+}
+
+button:hover{
+    background-color: #222;
+    color: #ccc;
+}
+.button {
+    margin: auto;
+    width: auto;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+    font-family: inherit;
+    width: 50px;
+    border-radius: 10px;
+    outline: none;
+}
+#inputpers {
+    margin: 5px;
+    padding: 8px;
+    padding-right: 15px;
+    font-family: inherit;
+    width: 100%;
+    text-align: right;
+}
+.matrix {
+    padding: 9px;
+    border-right: 3px solid #222;
+    border-left: 3px solid #222;
+    margin: 20px;
+    width: fit-content;
+    margin: auto;
+
+}
+#hasil {
+    margin: 5px;
+    padding: 5px;
+    font-family: inherit;
+    width: 100%;
+
+
+}
+#input {
+    margin: 5px;
+    padding: 8px;
+    padding-right: 15px;
+    font-family: inherit;
+    width: 100%;
+    text-align: right;
+
+
+}
+.container2 {
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #eaeaead0;
+    margin: auto;
+    margin-top: 20px;
+    animation: load 300ms ease-out;
+    max-width: 350px;
+    min-width: 350px;
+
+}
+input:focus{
+    outline: none;
+}
+
+.containeropsi {
+    margin: 10px;
+}
+select {
+    padding: 2px;
+    font-family: inherit;
+    border: none;
+    border-radius: 5px;
+    
+}select:focus {
+    outline: none;
+}
+.allbutton {
+    margin: auto;
+    width: fit-content;
+}
+.container3 {
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #eaeaead0;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    animation: load 300ms ease-out;
+    max-width: 450px;
+
+}
+.container4 {
+    padding: 2em;
+    border-radius: 20px;
+    background-color: #eaeaead0;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    animation: load 300ms ease-out;
+    max-width: 450px;
+
+}
+#myPlot {
+    margin: 30px;
+}
+#kongruensi {
+    display: inline;
+}
+#carix {
+    display: block;
+}
+
