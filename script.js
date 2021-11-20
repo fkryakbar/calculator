@@ -18,7 +18,7 @@ document.getElementById("tes").onclick = function(){
         console.log("NaN terdeteksi")
 
     }else {
-        hasil.innerText = result
+        hasil.innerText = "Nilai Determinan adalah " + result
 
     }
     
@@ -93,8 +93,6 @@ function result(){
     document.getElementById("input").value = eval(x)
 }
 // kongruensi linear
-
- 
 document.getElementById("carix").onclick = function () {
     var jawaban = []
     var mod = parseInt(document.getElementById("inputmod").value)
@@ -112,8 +110,53 @@ document.getElementById("carix").onclick = function () {
     if (jawaban.length == 0) {
         hasil.innerText = "Tidak ada Solusi untuk x"
 
+    }   
+}
+// FPB KPK
+document.getElementById("FPB").onclick = function (){
+    var faknum1 = []
+    var faknum2 = []
+    var num1 = parseInt(document.getElementById("inputnum1").value)
+    var num2 = parseInt(document.getElementById("inputnum2").value)
+    var fpbkpk = document.getElementById("hasilfpbkpk")
+    for(i = 1; i <= (num1 < num2 ? num2:num1)  ; i++) {
+        if (num1 % i == 0) {
+            faknum1.push(i)
+        }
+        if (num2 % i == 0) {
+            faknum2.push(i)
+        }
+    }
+    var CF =faknum1.filter(x => faknum2.includes(x))
+    fpbkpk.innerText = "Faktor dari "+ num1 + " = " + faknum1.join(", ") + "\n" + "\n" +"Faktor dari "+num2 + " = " + faknum2.join(", ") + "\n" + "\n" + "Jadi Faktor Persekutuan Terbesarnya adalah " + CF[CF.length - 1]
+    if (isNaN(num1 && num2)) {
+        fpbkpk.innerText = "Angka yang dimasukkan tidak Valid"
+        
+    }
+}
+document.getElementById("KPK").onclick = function (){
+    var faknum1 = []
+    var faknum2 = []
+    var num1 = parseInt(document.getElementById("inputnum1").value)
+    var num2 = parseInt(document.getElementById("inputnum2").value)
+    var fpbkpk = document.getElementById("hasilfpbkpk")
+    for(i = 1; i <= (num1 < num2 ? num2:num1)  ; i++) {
+        if (num1 % i == 0) {
+            faknum1.push(i)
+        }
+        if (num2 % i == 0) {
+            faknum2.push(i)
+        }
+    }
+    var CF =faknum1.filter(x => faknum2.includes(x))
+    fpbkpk.innerText = "KPK didapat dari " + "("+  num1 + " x " + num2 + ")" +" / " + "FPB dari " + num1 + " dan " + num2 + "\n" + "\n" + num1*num2 + " / " + CF[CF.length - 1] + "\n" + "\n" + "Sehingga nilai KPK nya adalah " + num1*num2/CF[CF.length - 1]
+    if (isNaN(num1 && num2)) {
+        fpbkpk.innerText = "Angka yang dimasukkan tidak Valid"
+        
     }
 
     
+
 }
+
 
