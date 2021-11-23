@@ -1,4 +1,15 @@
 // determinan
+document.getElementById("menu").onclick = function() {
+    document.getElementById("sidebar").style.left = "0px";
+
+}
+document.getElementById("menu2").onclick = function() {
+    document.getElementById("sidebar").style.left = "-250px";
+
+}
+
+
+
 document.getElementById("tes").onclick = function(){
     var aa = parseInt(document.getElementById("11").value) ;
     var ab = parseInt(document.getElementById("12").value) ;
